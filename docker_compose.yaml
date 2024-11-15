@@ -1,0 +1,14 @@
+  services:
+    web:
+      build:
+        dockerfile : dockerFile
+        #exécute moi ça dans le repertoire courant
+        context: .
+        tags:
+          - polls:latest
+      ports:
+      #port coté hot   port du conteneur 
+      - "8000:5000"
+      container_name: polls
+      restart: unless-stopped
+  
